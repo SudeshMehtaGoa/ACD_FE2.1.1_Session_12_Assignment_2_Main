@@ -1,0 +1,38 @@
+<section id="student">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12" style="background-color:aliceblue;">
+        <h2>Search Student</h2>
+        <input [(ngModel)]="term" placeholder="Student Name" />
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Subject</th>
+              <th>Marks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of StudentsArray |searchStudent:term">
+              <td>
+                {{student.studentName}}
+              </td>
+              <td>
+                {{student.studentAddress}}
+              </td>
+              <td>
+                {{student.studentSubject}}
+              </td>
+              <td>
+                {{student.studentMarks}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>
